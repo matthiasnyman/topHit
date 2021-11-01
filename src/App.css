@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+body {
+  padding: 0;
+  max-height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: italic;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Home */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.home {
+  background-image: url('./assets/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.header-start {
+  color: white;
+  padding: 0;
+  font-size: 2em;
+  margin: 1em;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  border: none;
+  color: white;
+  margin: 1em auto;
+  padding: 0;
+  width: 9ch;
+  background: repeating-linear-gradient(
+      90deg,
+      white 0,
+      white 1ch,
+      transparent 0,
+      transparent 1.5ch
+    )
+    0 100%/9.5ch 4px no-repeat;
+  font: 4ch droid sans mono, consolas, monospace;
+  font-weight: 800;
+  letter-spacing: 0.5ch;
+}
+
+input[type='number']:focus {
+  outline: none;
+  color: white;
+}
+input[type='number']::placeholder {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  background-color: white;
+  color: rgb(235, 21, 21);
+  border: none;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+  border-radius: 10rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 100px;
+  max-width: 80%;
+  margin: 2em auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Result */
+
+.result {
+  position: relative;
+  height: 100vh;
+  display: flex;
+}
+
+.album-cover {
+  background-image: url('./assets/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* min-height: 40vh;
+  min-width: 100%; */
+}
+.album-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  height: 50vh;
+  width: 100%;
+  background-color: #d9d9d9ef;
+}
+
+.album-header {
+  padding: 0;
+  font-size: 1.5em;
+  font-weight: 900;
+  margin: 1em 1em 0 1em;
+}
+.album-artist {
+  padding: 0;
+  font-size: 1.3em;
+  font-weight: 500;
+  margin: 1em 1em 0 1em;
+}
+
+.result button {
+  width: 300px;
+  margin: 1em auto;
+}
+
+#back-button {
+  background-color: transparent;
+  box-shadow: none;
+}
+#back-button img {
+  margin: auto 10px auto 0;
+}
+
+.hidden {
+  display: none;
+}
+.popup-form {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.74);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 3em auto;
+  padding: 2em;
+  width: 80vw;
+  height: 40vh;
+  background-color: #ffffff;
+}
+.close {
+  align-self: end;
+  width: 16px;
+  height: 16px;
 }
